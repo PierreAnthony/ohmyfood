@@ -348,6 +348,8 @@ footer {
   background-image: linear-gradient(to right, color(chic-1), color(chic-3));
   background-clip: text;
   color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .chic-courses {
@@ -374,6 +376,8 @@ footer {
   background-image: linear-gradient(to right, color(delice-1), color(delice-3));
   background-clip: text;
   color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 /*--------------------
@@ -391,6 +395,8 @@ footer {
   );
   background-clip: text;
   color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 /*----------------
