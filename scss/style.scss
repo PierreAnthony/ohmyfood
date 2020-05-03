@@ -1,0 +1,727 @@
+@import url("https://fonts.googleapis.com/css2?family=Croissant+One&family=Dancing+Script:wght@400;500;600;700&family=Devonshire&family=Kalam:wght@400;700&family=Kaushan+Script&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;700&display=swap");
+
+@font-face {
+  font-family: "Segoepr";
+  src: url("../../font/Segoepr.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Segoeprb";
+  src: url("../../font/Segoeprb.ttf") format("truetype");
+}
+
+$colors: (
+  primary: #339c82,
+  accent: #ffc943,
+  menu-note: #ffe0d7,
+  menu-chic: #fff5fd,
+  menu-delice: #eeefed,
+  menu-palette: #fdfffd,
+  page-title: #363737,
+  chic-sub: #db6d00,
+  chic-1: #da6d00,
+  chic-2: #b4638e,
+  chic-3: #714ac6,
+  delice-sub: #0086fa,
+  delice-1: #002dd9,
+  delice-2: #006ff1,
+  delice-3: #009ef8,
+  palette-sub: #4fc258,
+  palette-1: #009143,
+  palette-2: #abff7f,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+body,
+html {
+  margin: 0;
+}
+
+main {
+  padding-bottom: 50px;
+}
+
+header {
+  #logo {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.15rem;
+    background-color: color(primary);
+    height: 75px;
+    display: grid;
+    place-items: center;
+
+    a {
+      text-decoration: none;
+      color: color(accent);
+      font-size: 1.8rem;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  height: 55px;
+  background-color: color(primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+}
+
+/*--------------
+    Home Page
+---------------*/
+
+.menu-display {
+  margin: auto;
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  a {
+    text-decoration: none;
+  }
+
+  .menu {
+    height: 450px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    box-shadow: 0px 0px 5px gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      margin-top: 0px;
+    }
+  }
+
+  &__menu-note {
+    background-color: color(menu-note);
+    position: relative;
+
+    .svg-display {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 40px;
+    }
+
+    .note-deco {
+      position: absolute;
+    }
+
+    .note-subtitle {
+      font-family: "Segoeprb", "Kalam", cursive;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      color: #000;
+    }
+  }
+
+  &__menu-chic {
+    background-color: color(menu-chic);
+
+    .chic-subtitle {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.9rem;
+      font-weight: bolder;
+      color: color(chic-sub);
+    }
+  }
+
+  &__menu-delice {
+    background-color: color(menu-delice);
+
+    .delice-subtitle {
+      font-family: "Segoepr", "Kalam", cursive;
+      font-size: 1.8rem;
+      color: color(delice-sub);
+    }
+  }
+
+  &__menu-palette {
+    background-color: color(menu-palette);
+
+    .palette-subtitle {
+      font-family: "Segoepr", "Kalam", cursive;
+      font-size: 1.8rem;
+      color: color(palette-sub);
+    }
+  }
+}
+
+.coming-soon {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.btn {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  background-color: color(primary);
+  padding: 0.8em 1.7em;
+  color: color(accent);
+
+  &.btn-next {
+    margin: auto;
+    border-radius: 0.5em;
+    text-decoration: none;
+  }
+
+  &.btn-footer {
+    text-decoration: none;
+    font-size: 0.85rem;
+    background-color: transparent;
+  }
+}
+
+/*-----------------
+    All menus
+------------------*/
+
+.page-title {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: color(page-title);
+  text-align: center;
+}
+
+.container {
+  /*width: 90%;*/
+  margin-bottom: 50px;
+  padding-bottom: 150px;
+  position: relative;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 70px;
+  }
+
+  &__title {
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: -10px;
+
+    .note-deco {
+      margin-bottom: -35px;
+    }
+  }
+
+  &.container--menu-note {
+    background-color: color(menu-note);
+  }
+
+  &.container--menu-chic {
+    background-color: color(menu-chic);
+  }
+
+  &.container--menu-delice {
+    background-color: color(menu-delice);
+  }
+
+  &.container--menu-palette {
+    background-color: color(menu-palette);
+  }
+}
+
+.courses-title {
+  margin-bottom: 20px;
+
+  &--menu-note {
+    font-family: "Segoeprb", "Kalam", cursive;
+    font-size: 0.8rem;
+  }
+
+  &--menu-chic {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 0.8rem;
+  }
+
+  &--menu-delice {
+    font-family: "Segoepr", "Kalam", cursive;
+    font-size: 0.7rem;
+
+    .delice-courses {
+      font-weight: 500;
+    }
+  }
+
+  &--menu-palette {
+    font-family: "Segoepr", "Kalam", cursive;
+    font-size: 0.7rem;
+
+    .palette-courses {
+      font-weight: 500;
+    }
+  }
+}
+
+.food-list {
+  font-family: "Segoepr", "Kalam", cursive;
+  font-size: 0.9rem;
+  padding: 0 15px;
+
+  &.chic-list {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 1rem;
+    /*padding: 0 80px;*/
+  }
+
+  &__line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -1em;
+  }
+
+  &__desc {
+    padding-right: 1em;
+  }
+
+  &__price {
+    &--note {
+      font-family: "Segoeprb", "Kalam", cursive;
+    }
+
+    &--chic {
+      font-size: 1.05rem;
+    }
+
+    &--delice {
+      font-size: 1.1rem;
+      margin-top: -5px;
+    }
+
+    &--palette {
+      font-size: 1.1rem;
+      margin-top: -5px;
+    }
+  }
+}
+
+/*-----------------
+ La note enchantée
+------------------*/
+
+.note-title {
+  font-family: "Devonshire", cursive;
+  margin-bottom: -20px;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: lighter;
+    color: #000;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    margin-top: 10px;
+  }
+}
+
+.container__footer {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+/*-----------------------
+  Le chic à la française
+------------------------*/
+
+.chic-title {
+  font-family: "Croissant One", cursive;
+  font-size: 1.3rem;
+  font-weight: lighter;
+  background-image: linear-gradient(to right, color(chic-1), color(chic-3));
+  background-clip: text;
+  color: transparent;
+}
+
+.chic-courses {
+  &--starter {
+    color: color(chic-1);
+  }
+
+  &--main {
+    color: color(chic-2);
+  }
+
+  &--desserts {
+    color: color(chic-3);
+  }
+}
+
+/*-----------------------
+  Le délice des papilles
+------------------------*/
+
+.delice-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.9rem;
+  background-image: linear-gradient(to right, color(delice-1), color(delice-3));
+  background-clip: text;
+  color: transparent;
+}
+
+/*--------------------
+  La palette du goût
+---------------------*/
+
+.palette-title {
+  font-family: "Kaushan Script", cursive;
+  font-size: 1.8rem;
+  font-weight: lighter;
+  background-image: linear-gradient(
+    to right,
+    color(palette-1),
+    color(palette-2)
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+/*----------------
+ Mentions légales
+----------------*/
+
+article {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  width: 85%;
+  margin: auto;
+  color: color(page-title);
+
+  .wrapper {
+    h1 {
+      text-align: center;
+      color: color(primary);
+    }
+
+    h2 {
+      text-align: center;
+      color: color(accent);
+      font-weight: 500;
+    }
+
+    h3 {
+      font-weight: 500;
+      text-decoration: underline;
+    }
+
+    h4 {
+      font-weight: 500;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    a {
+      text-decoration: none;
+      color: salmon;
+    }
+
+    ul {
+      margin-left: -10px;
+      text-align: justify;
+    }
+  }
+}
+
+/*-----------
+  Animations 
+------------*/
+
+/*----- Zoom menu -----*/
+
+.menu-content {
+  transform: scale(1);
+  transition: transform 400ms;
+
+  h2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+/*----- Button dots ------*/
+
+.btn-next span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: color(accent);
+  display: inline-block;
+  animation: dots 1500ms ease-in-out infinite;
+
+  &:nth-child(1) {
+    margin-left: 4px;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 300ms;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 600ms;
+  }
+}
+
+@keyframes dots {
+  50% {
+    opacity: 0;
+    transform: scale(0.7) translateY(3px);
+  }
+}
+
+/*----- Button wiggle -----*/
+
+.btn-footer:hover {
+  animation: wiggle 50ms ease-in-out 5 alternate;
+}
+
+@keyframes wiggle {
+  from {
+    transform: rotate(6deg);
+  }
+
+  to {
+    transform: rotate(-6deg);
+  }
+}
+
+/*----- Menu title underline -----*/
+
+.note-courses--title,
+.chic-courses--title,
+.delice-courses--title,
+.palette-courses--title {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: currentColor;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/*-------------
+  Media queries
+---------------*/
+
+@media all and (min-width: 700px) {
+  body,
+  footer {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  header {
+    #logo {
+      a {
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  .menu-display {
+    width: 85%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+
+    .menu {
+      margin-bottom: 30px;
+    }
+  }
+
+  .coming-soon {
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+
+  .page-title {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    width: 85%;
+    margin: auto;
+    margin-bottom: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    &__footer {
+      .note-deco {
+        margin-left: -100px;
+      }
+    }
+  }
+
+  .food-list {
+    &.chic-list {
+      padding: 0 80px;
+    }
+
+    &.delice-list {
+      padding: 0 60px;
+    }
+
+    &.palette-list {
+      padding: 0 60px;
+    }
+  }
+
+  .container--menu-chic {
+    .chic-title {
+      font-size: 1.7rem;
+    }
+  }
+
+  .container--menu-delice {
+    .delice-title {
+      font-size: 2.7rem;
+    }
+  }
+
+  .container--menu-palette {
+    .palette-title {
+      font-size: 2.6rem;
+    }
+  }
+
+  .courses-title {
+    position: relative;
+    width: 100%;
+
+    .deco-left,
+    .deco-right {
+      position: absolute;
+    }
+
+    .deco-note {
+      &__left {
+        top: -10px;
+        width: 37%;
+        padding-left: 15px;
+      }
+
+      &__right {
+        top: -14px;
+        right: -5px;
+        width: 37%;
+      }
+    }
+
+    .deco-chic {
+      top: -53px;
+      width: 40%;
+
+      &__left {
+        transform: scaleX(-1);
+        left: -40px;
+      }
+
+      &__right {
+        right: -35px;
+      }
+
+      &--line1 {
+        fill: color(chic-1);
+      }
+
+      &--line2 {
+        fill: color(chic-2);
+      }
+
+      &--line3 {
+        fill: color(chic-3);
+      }
+    }
+
+    .deco-delice {
+      width: 33%;
+
+      &__left {
+        transform: scaleX(-1);
+      }
+
+      &__right {
+        top: 0;
+        right: 0;
+      }
+
+      &--line1 {
+        fill: color(delice-1);
+      }
+
+      &--line2 {
+        fill: color(delice-2);
+      }
+
+      &--line3 {
+        fill: color(delice-3);
+      }
+    }
+
+    .deco-palette {
+      width: 36%;
+      top: -2px;
+
+      &__left {
+        transform: scaleX(-1);
+      }
+
+      &__right {
+        right: 0;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 699px) {
+  .deco-left,
+  .deco-right {
+    display: none;
+  }
+}
+
+@media all and (min-width: 450px) and (max-width: 699px) {
+  .menu {
+    width: 350px;
+    margin: auto;
+  }
+}
